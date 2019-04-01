@@ -5,7 +5,7 @@ class Game {
         // this.playerTwoScore = 0;
         this.pitch = new Pitch();
         this.player = new Player();
-        // this.ball = new Ball();
+        this.ball = new Ball();
         // this.players = Players[]
     }
 
@@ -19,7 +19,7 @@ class Game {
         background(0, 180, 0);
         this.pitch.draw();
         this.player.draw();
-        // this.ball.draw();
+        this.ball.draw();
     }
 
     over() {
