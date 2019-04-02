@@ -1,12 +1,19 @@
-function Ball() {
-    this.xx = GAME_WIDTH / 2;
-    this.yy = GAME_HEIGHT / 2;
-    this.dx = 1;
-    this.dy = 1;
+let spring = 0.05;
+let gravity = 0.0;
+let friction = -0.9;
 
-    this.draw = function() {
+class Ball {
+    constructor() {
+        this.xx = GAME_WIDTH / 2;
+        this.yy = GAME_HEIGHT / 2;
+        this.dx = 2;
+        this.dy = 2;
+    }
+
+    draw() {
         // Draw ball
         fill(255);
+        // drawSprites();
         circle(this.xx, this.yy, 10);
 
         //
@@ -26,36 +33,58 @@ function Ball() {
             this.dy = -this.dy;
         }
 
-        if (this.xx < 20 || this.xx > width - 20) {
-            this.dx = -this.dx;
-        }
-        if (
-            this.yy < 20 ||
-            (this.xx > this.player - 30 && this.xx < mouseX + 30 && this.yy === height - 70)
-        ) {
-            this.dy = -this.dy;
-        }
-        // if (
-        //     (this.xx <= mouseX - 30 &&
-        //         this.yy <= height - 50 &&
-        //         dist(this.xx, this.yy, mouseX - 30, height - 50) <= 20) ||
-        //     (this.xx >= mouseX + 30 &&
-        //         this.yy <= height - 50 &&
-        //         dist(this.xx, this.yy, mouseX + 30, height - 50) <= 20)
-        // ) {
+        // if (this.xx < 20 || this.xx > width - 20) {
         //     this.dx = -this.dx;
-        //     this.dy = -this.dy;
         // }
-        // if (this.yy > height + 25) {
-        //     this.dy = 0;
-        //     this.dx = 0;
-        // }
-    };
+        // collide();
 
-    // function keyPressed() {
-    //     x = random(20, width - 20);
-    //     y = 20;
-    //     dx = 1;
-    //     dy = 1;
+        let hit = collideCircleCircle(
+            this.xx,
+            this.yy,
+            30,
+            game.player.pBounds.left,
+            game.player.pBounds.top,
+            60
+        );
+        // console.log('coliding? ' + hit);
+        if (hit) {
+            this.dx *= 1.2;
+            this.dy *= 1.2;
+        }
+        // this.collide();
+
+        // function keyPressed() {
+        //     x = random(20, width - 20);
+        //     y = 20;
+        //     dx = 1;
+        //     dy = 1;
+        // }
+    }
+    // collide() {
+    //     let ddx = game.player.pBounds.left - this.xx;
+    //     let ddy = game.player.pBounds.top - this.yy;
+    //     let distance = sqrt(ddx * ddx + ddy * ddy);
+    //     let minDist = 40 / 2 + 30 / 2;
+    //     // return minDist;
+    //     // return distance
+    //     if (distance < minDist) {
+    //         console.log('2');
+    //         this.xx *= 3;
+    //         this.yy *= 3;
+    //     }
+    // }
+
+    // collide() {
+    //     let ddx = game.player.pBounds.left - this.xx;
+    //     let ddy = game.player.pBounds.top - this.yy;
+    //     let distance = sqrt(ddx * ddx + ddy * ddy);
+    //     let minDist = 40 / 2 + 30 / 2;
+    //     //   console.log(distance);
+    //     //console.log(minDist);
+    //     if (distance < minDist) {
+    //         console.log('2');
+    //         this.xx *= -1;
+    //         this.yy *= -1;
+    //     }
     // }
 }

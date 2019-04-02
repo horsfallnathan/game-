@@ -1,8 +1,10 @@
-function Player() {
-    this.xx = 40;
-    this.yy = GAME_HEIGHT / 2;
+class Player {
+    constructor() {
+        this.xx = 40;
+        this.yy = GAME_HEIGHT / 2;
+    }
 
-    this.draw = function() {
+    draw() {
         // Draw player
         fill(255);
         circle(this.xx, this.yy, 20);
@@ -33,5 +35,14 @@ function Player() {
         if (this.yy > GAME_HEIGHT - 40) {
             this.yy = GAME_HEIGHT - 45;
         }
-    };
+        this.playerBounds();
+    }
+    playerBounds() {
+        this.pBounds = {
+            left: this.xx,
+            top: this.yy,
+            right: this.xx + 10,
+            bottom: this.yy + 10
+        };
+    }
 }

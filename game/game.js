@@ -20,6 +20,8 @@ class Game {
         this.pitch.draw();
         this.player.draw();
         this.ball.draw();
+        // this.ball.collide();
+        // this.ball.move();
     }
 
     over() {
