@@ -7,10 +7,10 @@ var blball;
 // let friction = -0.9;
 function preload() {
     blball = loadImage(
-        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/SoccerBall.png'
+        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/SoccerBallsmall.png'
     );
     playerhome = loadImage(
-        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/playerwhite.png'
+        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/playerwhitebg.png'
     );
 }
 
