@@ -6,7 +6,7 @@ class Game {
         this.pitch = new Pitch();
         this.player = new Player();
         this.ball = new Ball();
-        this.sprite = new Sprite();
+        // this.sprite = new Sprite();
         // this.players = Players[]
     }
 
