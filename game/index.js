@@ -1,11 +1,13 @@
 const game = new Game();
 const ball = new Ball();
 const player = new Player();
+const sprite = new Sprite();
 
 function setup() {
     game.setup();
     ball.setup();
     player.setup();
+    sprite.setup();
 }
 
 function draw() {
