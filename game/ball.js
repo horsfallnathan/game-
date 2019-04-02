@@ -24,8 +24,8 @@ class Ball {
         // Draw ball
         fill(255);
         drawSprites();
+        circle(this.xx, this.yy, 10);
         player.ply.displace(ball.spr);
-        // circle(this.xx, this.yy, 10);
 
         //
         // this.xx = this.xx + this.dx;
@@ -50,19 +50,19 @@ class Ball {
         // }
         // collide();
 
-        let hit = collideCircleCircle(
-            this.xx,
-            this.yy,
-            30,
-            game.player.pBounds.left,
-            game.player.pBounds.top,
-            60
-        );
-        // console.log('coliding? ' + hit);
-        if (hit) {
-            this.dx *= 1.2;
-            this.dy *= 1.2;
-        }
+        // let hit = collideCircleCircle(
+        //     this.xx,
+        //     this.yy,
+        //     30,
+        //     game.player.pBounds.left,
+        //     game.player.pBounds.top,
+        //     60
+        // );
+        // // console.log('coliding? ' + hit);
+        // if (hit) {
+        //     this.dx *= 1.2;
+        //     this.dy *= 1.2;
+        // }
         // this.collide();
 
         // function keyPressed() {

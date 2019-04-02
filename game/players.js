@@ -1,7 +1,9 @@
 class Player {
     constructor() {
+        this.speed = 0;
         this.xx = 40;
         this.yy = GAME_HEIGHT / 2;
+        this.player2 = new Sprite();
     }
     setup() {
         this.ply = createSprite(40, GAME_HEIGHT / 2, 40, 40);
