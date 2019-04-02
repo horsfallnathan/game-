@@ -15,7 +15,6 @@ class Player {
         // Draw player
         fill(255);
         drawSprites();
-        circle(this.xx, this.yy, 20);
 
         // To move player around field
         if (keyIsDown(LEFT_ARROW)) {

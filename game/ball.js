@@ -1,6 +1,6 @@
 let spring = 0.05;
 let gravity = 0.0;
-// let friction = -0.9;
+let spr;
 
 class Ball {
     constructor() {
@@ -9,27 +9,22 @@ class Ball {
         this.dx = 2;
         this.dy = 2;
     }
+
     setup() {
-        this.spr = createSprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 40, 40);
-        this.spr.shapeColor = color(255);
-        // this.spr.velocity.y = -0.5;
-        // this.spr.velocity.x = -0.5;
-        // this.spr2 = createSprite(GAME_WIDTH / 2, GAME_HEIGHT / 4, 40, 40);
-        // this.spr2.shapeColor = color(255);
-        // this.spr2.velocity.y = 0.5;
-        // this.spr2.velocity.x = 0.5;
+        this.spr = createSprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 10, 10);
+        this.spr.addImage(blball);
     }
 
     draw() {
         // Draw ball
         fill(255);
+        // this.spr.position.x = mouseX;
+        // this.spr.position.y = mouseY;
         drawSprites();
-        circle(this.xx, this.yy, 10);
+        // circle(this.xx, this.yy, 10);
         player.ply.displace(ball.spr);
 
         //
-        // this.xx = this.xx + this.dx;
-        // this.yy = this.yy + this.dy;
 
         if (this.spr < 40) {
             this.spr.velocity.y = -0.5;

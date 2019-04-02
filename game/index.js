@@ -28,6 +28,15 @@ const ball = new Ball();
 const player = new Player();
 const sprite = new Sprite();
 
+var blball;
+// let friction = -0.9;
+function preload() {
+    blball = loadImage(
+        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/SoccerBall.png'
+    );
+    playerhome = loadImage;
+}
+
 function setup() {
     game.setup();
     ball.setup();
