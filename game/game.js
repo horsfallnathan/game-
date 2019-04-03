@@ -6,6 +6,7 @@ class Game {
         this.pitch = new Pitch();
         this.player = new Player();
         this.ball = new Ball();
+        this.post = new Posts();
         // this.sprite = new Sprite();
         // this.players = Players[]
     }
@@ -21,6 +22,7 @@ class Game {
         this.pitch.draw();
         this.player.draw();
         this.ball.draw();
+        this.post.draw();
 
         // this.ball.collide();
         // this.ball.move();

@@ -15,8 +15,8 @@ class Ball {
         this.spr = createSprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 10, 10);
         this.spr.maxSpeed = 6;
         this.spr.friction = 0.02;
-        this.spr.velocity.x = 1;
-        this.spr.velocity.y = 1;
+        // this.spr.velocity.x = 1;
+        // this.spr.velocity.y = 1;
         this.spr.setSpeed = (1, random(360));
         this.spr.mass = 1;
         this.spr.rotationSpeed = 0.5;

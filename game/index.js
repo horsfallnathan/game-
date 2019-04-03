@@ -1,6 +1,7 @@
 const game = new Game();
 const ball = new Ball();
 const player = new Player();
+const post = new Posts();
 let ballanim;
 // const sprite = new Sprite();
 
@@ -25,6 +26,7 @@ function preload() {
 function setup() {
     game.setup();
     ball.setup();
+    post.setup();
     // ball.move();
     player.setup();
     // sprite.preload();

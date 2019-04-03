@@ -61,12 +61,13 @@ class Player {
         }
 
         if (player.ply.collide(ball.spr)) {
-            ball.spr.changeAnimation('rotate');
+            // ball.spr.changeAnimation('rotate');
             // if keyDown('s') {
             //     ball.spr.addSpeed
 
             // }
             if (keyIsDown(LEFT_ARROW)) {
+                ball.spr.rotationSpeed = -0.8;
                 ball.spr.position.x -= 4;
                 if (ball.spr.position.x < 40) {
                     ball.spr.velocity.x = -ball.spr.velocity.x;
@@ -74,18 +75,21 @@ class Player {
             }
 
             if (keyIsDown(RIGHT_ARROW)) {
+                ball.spr.rotationSpeed = 0.8;
                 ball.spr.position.x += 4;
                 if (ball.spr.position.x > GAME_WIDTH - 40) {
                     ball.spr.velocity.x = -ball.spr.velocity.x;
                 }
             }
             if (keyIsDown(UP_ARROW)) {
+                ball.spr.rotationSpeed = 0.8;
                 ball.spr.position.y -= 4;
                 if (ball.spr.position.y < 40) {
                     ball.spr.velocity.y = -ball.spr.velocity.y;
                 }
             }
             if (keyIsDown(DOWN_ARROW)) {
+                ball.spr.rotationSpeed = -0.8;
                 ball.spr.position.y += 4;
                 if (ball.spr.position.y > GAME_HEIGHT - 40) {
                     ball.spr.velocity.y = -ball.spr.velocity.y;
