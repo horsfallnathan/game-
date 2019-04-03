@@ -1,4 +1,5 @@
 let awayPoint = 0;
+let homePoint = 0;
 class Posts {
     constructor() {}
     setup() {
@@ -13,9 +14,18 @@ class Posts {
         if (post.homegoal.overlap(ball.spr)) {
             awayScores();
         }
+        if (post.awaygoal.overlap(ball.spr)) {
+            homeScores();
+        }
     }
 }
 function awayScores() {
     awayPoint++;
-    console.log(awayPoint);
+    textSize(50);
+    text('Away Team Scores!!!', GAME_WIDTH / 2 - 50, GAME_HEIGHT / 2);
+}
+function homeScores() {
+    homePoint++;
+    textSize(50);
+    text('Home Team Scores!!!', GAME_WIDTH / 2 - 50, GAME_HEIGHT / 2);
 }

@@ -18,6 +18,9 @@ function preload() {
     playerhome = loadImage(
         'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/playerwhitebg.png'
     );
+    playerAway = loadImage(
+        'https://raw.githubusercontent.com/horsfallnathan/game-/master/game/Assets/playerwhitebg.png'
+    );
 
     ballanim = loadAnimation(blball, blball2);
     ballanim.frameDelay = 10;

@@ -6,6 +6,7 @@ class Player {
     }
     setup() {
         this.ply = createSprite(40, GAME_HEIGHT / 2);
+        this.ply2 = createSprite(GAME_WIDTH - 40, GAME_HEIGHT / 2);
         this.ply.addImage(playerhome);
         this.ply.velocity.y = 0;
         this.ply.velocity.x = 0;

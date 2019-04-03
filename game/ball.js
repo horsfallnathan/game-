@@ -60,7 +60,7 @@ class Ball {
         if (ball.spr.position.x < 40) {
             ball.spr.velocity.x = -ball.spr.velocity.x;
         }
-        player.ply.displace(ball.spr);
+        // player.ply.displace(ball.spr);
         // player.ply.bounce(ball.spr);
     }
     // move() {}
