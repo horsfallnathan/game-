@@ -7,8 +7,8 @@ class Player {
     setup() {
         this.ply = createSprite(40, GAME_HEIGHT / 2);
         this.ply.addImage(playerhome);
-        this.ply.velocity.y = 1;
-        this.ply.velocity.x = 1;
+        this.ply.velocity.y = 0;
+        this.ply.velocity.x = 0;
         this.ply.mass = 2;
     }
     draw() {
@@ -58,6 +58,43 @@ class Player {
         }
         if (player.ply.position.x < 40) {
             player.ply.velocity.x = -player.ply.velocity.x;
+        }
+
+        if (player.ply.collide(ball.spr)) {
+            ball.spr.changeAnimation('rotate');
+            // if keyDown('s') {
+            //     ball.spr.addSpeed
+
+            // }
+            if (keyIsDown(LEFT_ARROW)) {
+                ball.spr.position.x -= 4;
+                if (ball.spr.position.x < 40) {
+                    ball.spr.velocity.x = -ball.spr.velocity.x;
+                }
+            }
+
+            if (keyIsDown(RIGHT_ARROW)) {
+                ball.spr.position.x += 4;
+                if (ball.spr.position.x > GAME_WIDTH - 40) {
+                    ball.spr.velocity.x = -ball.spr.velocity.x;
+                }
+            }
+            if (keyIsDown(UP_ARROW)) {
+                ball.spr.position.y -= 4;
+                if (ball.spr.position.y < 40) {
+                    ball.spr.velocity.y = -ball.spr.velocity.y;
+                }
+            }
+            if (keyIsDown(DOWN_ARROW)) {
+                ball.spr.position.y += 4;
+                if (ball.spr.position.y > GAME_HEIGHT - 40) {
+                    ball.spr.velocity.y = -ball.spr.velocity.y;
+                }
+            }
+            ball.spr.velocity.x = 1;
+            ball.spr.velocity.y = 1;
+        } else {
+            ball.spr.changeAnimation('normal');
         }
 
         this.playerBounds();
